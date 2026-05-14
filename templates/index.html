@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Rock Paper Scissors</h1>
+        
+        <div class="game-section">
+            <div class="player-info">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="50">
+            </div>
+            
+            <div class="choices">
+                <button class="choice-btn" onclick="playGame('rock')">🪨 Rock</button>
+                <button class="choice-btn" onclick="playGame('paper')">📄 Paper</button>
+                <button class="choice-btn" onclick="playGame('scissors')">✂️ Scissors</button>
+            </div>
+            
+            <div class="result" id="result"></div>
+            
+            <div class="stats" id="stats"></div>
+        </div>
+        
+        <div class="leaderboard-section">
+            <h2>🏆 Leaderboard</h2>
+            <div id="leaderboard"></div>
+            <button onclick="loadLeaderboard()">Refresh</button>
+        </div>
+        
+        <div class="admin-section">
+            <h3>Admin Panel</h3>
+            <button onclick="resetDatabase()">Reset Database</button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
